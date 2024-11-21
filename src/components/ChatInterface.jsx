@@ -38,7 +38,7 @@ export default function ChatInterface({ onSendMessage,threadMessages,onNewMessag
         
         {threadMessages.map((message, index) => (
           <div key={index} className="chat-message">
-            {message}
+            { index%2===0 ? "You : "+message : "GPT : "+message}
           </div>
         ))}
       </div>
@@ -52,7 +52,7 @@ export default function ChatInterface({ onSendMessage,threadMessages,onNewMessag
         </button>
         <input
           type="text"
-          placeholder="Type a message..."
+          placeholder="Ask any question using @address or @profile"
           value={currentMessage}
           onChange={(e) => onNewMessage(e.target.value)}
           onKeyDown={handleKeyDown} // Handle Enter key press

@@ -109,7 +109,35 @@ export default function App() {
   const handleSendMessage = async (newMessage , isGPTResponse) => {
       
     try {
-      if(threadMessages.length==0){
+      
+      if (threads.length === 0) {
+        
+        const createThreadAndRunResponse = await fetch("http://localhost:8000/api/process/create-thread-and-run", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: newMessage,
+          }),
+        })
+
+        //log create thread and run response
+        const data = await createThreadAndRunResponse.json();
+        console.log('create thread and run response : ', data);
+        const threadId = data.message.thread_id;
+        console.log("created thread id response : ", threadId);
+        setThreads([...threads, threadId]);
+        setCurrentThread(threads.length);
+        console.log("thread completion timestamp in frontend : ", data.completedAt);
+        
+        setMessagesSent(true);
+        //set thread completion timestamp
+
+        setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?5000:Date.now()-data.completedAt);
+      }
+
+      if(threadMessages.length===0){
         setFirstMessagesOfThread([...firstMessagesOfThread, newMessage]);
       }
         const addMessageToThread = await fetch("http://localhost:8000/api/process/run-thread", {
