@@ -1,0 +1,50 @@
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #f4f4f4;
+}
+
+.new-chat-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff; /* Matches button color */
+  color: white;
+  cursor: pointer;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.thread-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.thread-item {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #007bff; /* Matches "New Chat" button color */
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.active-thread {
+  background-color: #007bff;
+  color: white;
+}
+
+
+
+.sidebar h2 {
+  margin-bottom: 10px;
+}
