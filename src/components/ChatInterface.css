@@ -1,6 +1,6 @@
 .app-container {
   display: flex;
-  height: 92vh;
+  height: 93vh;
   font-family: Arial, sans-serif;
   font-size: 14px;
   background-color: white;
@@ -127,3 +127,30 @@
 }
 
 
+.file-upload-container {
+  position: relative;
+}
+
+.file-upload-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #5f6368; /* Neutral color */
+  transition: color 0.3s ease;
+}
+
+.file-upload-button:hover {
+  color: #3a7afe; /* Highlight color */
+}
+
+.file-upload-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload-button:focus {
+  outline: none;
+}

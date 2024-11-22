@@ -1,5 +1,6 @@
 import React, {useState } from "react";
 import "./ChatInterface.css";
+import FileUploadIcon from "./FileUploadIcon";
 
 export default function ChatInterface({ onSendMessage,threadMessages,onNewMessage,currentMessage }) {
    
@@ -50,6 +51,7 @@ export default function ChatInterface({ onSendMessage,threadMessages,onNewMessag
         >
           {currentModel.toUpperCase()}
         </button>
+        <FileUploadIcon></FileUploadIcon>
         <input
           type="text"
           placeholder="Ask any question using @address or @profile"
@@ -57,7 +59,9 @@ export default function ChatInterface({ onSendMessage,threadMessages,onNewMessag
           onChange={(e) => onNewMessage(e.target.value)}
           onKeyDown={handleKeyDown} // Handle Enter key press
           className="chat-text-input"
+          
         />
+
         <button onClick={handleSendMessage} className={`send-button`}>
           Send
         </button>

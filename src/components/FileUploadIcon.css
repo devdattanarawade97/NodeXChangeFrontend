@@ -1,0 +1,35 @@
+.file-upload-container {
+    position: relative;
+    display: flex;
+    
+  }
+  
+  .file-upload-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #5f6368; /* Neutral color */
+    transition: color 0.3s ease;
+  }
+  
+  .file-upload-icon {
+    position: absolute;
+    
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #5f6368;
+    transition: color 0.3s ease;
+  }
+  
+  .file-upload-icon:hover {
+    color: #3a7afe; /* Highlight color */
+  }
+  
+  
+  .file-upload-button:focus {
+    outline: none;
+  }
+  

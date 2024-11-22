@@ -28,6 +28,7 @@ export default function LeftPanel({ onNewThread, onSelectThread, threads, curren
           </div>
         ))}
       </div>
+  
 
     </div>
   );
