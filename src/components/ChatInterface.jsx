@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 import "./ChatInterface.css";
 
-export default function ChatInterface({ onSendMessage,threadMessages,onNewMessage,currentMessage ,messagesSent}) {
+export default function ChatInterface({ onSendMessage,threadMessages,onNewMessage,currentMessage }) {
    
 
   //current model state variable

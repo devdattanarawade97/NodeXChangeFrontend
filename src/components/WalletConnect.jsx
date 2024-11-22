@@ -1,7 +1,7 @@
 
 
 import './WalletConnect.css';
-export default function WalletConnect({walletAddress , shortenWalletAddress , setWalletAddress , onConnectWallet}){ 
+export default function WalletConnect({walletAddress , shortenWalletAddress , setWalletAddress , onConnectWallet , onDisconnectWallet}){ 
 
 
 
@@ -15,7 +15,7 @@ export default function WalletConnect({walletAddress , shortenWalletAddress , se
               onClick={() => setWalletAddress(null)} // Disconnect wallet
               className="disconnect-wallet-button"
             >
-               <span className="material-icons">logout</span> {/* Disconnect icon */}
+               <span className="material-icons" onClick={onDisconnectWallet}>logout</span> {/* Disconnect icon */}
             </button>
           </>
         ) : (

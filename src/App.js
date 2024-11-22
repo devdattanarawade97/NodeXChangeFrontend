@@ -178,7 +178,7 @@ export default function App() {
 
   return (
     <div>
-          <Header parentWalletAddress={parentWalletAddress} />
+          <Header parentWalletAddress={setParentWalletAddress} />
           <div className="app-container">
             <LeftPanel
               onNewThread={handleNewThread}
@@ -192,7 +192,7 @@ export default function App() {
               threadMessages={threadMessages}
               onNewMessage={setCurrentMessage}
               currentMessage={currentMessage}
-              messagesSent={messagesSent}
+             
             />
           </div>
         </div>
