@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures left and right alignment */
+    padding: 10px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+   
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+  }
+  
+  /* Header title styles */
+  .header-title {
+    color: #5757d4;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0; /* Remove default margins for h1 */
+  }
+  

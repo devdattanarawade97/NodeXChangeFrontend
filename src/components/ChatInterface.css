@@ -1,6 +1,6 @@
 .app-container {
   display: flex;
-  height: 100vh;
+  height: 92vh;
   font-family: Arial, sans-serif;
   font-size: 14px;
   background-color: white;
@@ -69,10 +69,11 @@
 
 .chat-message {
   margin-bottom: 10px;
-  background-color: #f9f9f9; /* Slightly shaded background */
+  background-color: #f9f9f9;;; /* Slightly shaded background */
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Elevation for messages */
+  color: black;
 }
 
 .chat-input {
@@ -89,11 +90,11 @@
   border-radius: 15px;
   border: 1px solid #666;
   background-color: white;
-  color: black;
+  color: black;;
 }
 
 .send-button {
-  background-color: black;
+  background-color: #5757d4;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -114,7 +115,7 @@
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color:   #5757d4;
   color: white;
   transition: background-color 0.3s;
 }

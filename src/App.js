@@ -6,6 +6,8 @@ import React, {  useEffect, useState } from "react";
 
 import LeftPanel from './components/LeftPanel';
 import ChatInterface from './components/ChatInterface';
+import Header from './components/Header';
+
 
 
 export default function App() {
@@ -17,6 +19,7 @@ export default function App() {
   //current thread state variable
   const [currentThread, setCurrentThread] = useState(0);
 
+
   //set thread completion timestamp state variable
   const [threadCompletionTimestamp, setThreadCompletionTimestamp] = useState(null);
   //thread messages state variable
@@ -25,6 +28,11 @@ export default function App() {
   const [messagesSent, setMessagesSent] = useState(false);
   //first message of thread state variable
   const [firstMessagesOfThread, setFirstMessagesOfThread] = useState([]);
+
+ 
+  //wallet address state variable 
+  const [parentWalletAddress, setParentWalletAddress] = useState(null);
+        // Function to connect Solana wallet
 
   //async fetch thread run data
   async function fetchThreadRunData() {
@@ -168,25 +176,25 @@ export default function App() {
     
   };
 
-
   return (
-    <div className="app-container">
- 
-      <LeftPanel
-        onNewThread={handleNewThread}
-        onSelectThread={handleSelectThread}
-        threads={threads}
-        currentThread={currentThread}
-        firstMessages={firstMessagesOfThread}
-   
-      />
-      <ChatInterface
-        onSendMessage={handleSendMessage}
-        threadMessages={threadMessages}
-        onNewMessage={setCurrentMessage}
-        currentMessage={currentMessage}
-        messagesSent={messagesSent}
-      />
-    </div>
+    <div>
+          <Header parentWalletAddress={parentWalletAddress} />
+          <div className="app-container">
+            <LeftPanel
+              onNewThread={handleNewThread}
+              onSelectThread={handleSelectThread}
+              threads={threads}
+              currentThread={currentThread}
+              firstMessages={firstMessagesOfThread}
+            />
+            <ChatInterface
+              onSendMessage={handleSendMessage}
+              threadMessages={threadMessages}
+              onNewMessage={setCurrentMessage}
+              currentMessage={currentMessage}
+              messagesSent={messagesSent}
+            />
+          </div>
+        </div>
   );
 }

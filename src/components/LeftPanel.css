@@ -14,7 +14,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
-  background-color: #007bff; /* Matches button color */
+  background-color: #5757d4;/* Matches button color */
   color: white;
   cursor: pointer;
   width: 70%;
@@ -31,7 +31,7 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  color: #007bff; /* Matches "New Chat" button color */
+  color: #5757d4;; /* Matches "New Chat" button color */
   background-color: #f9f9f9;
   margin-bottom: 10px;
   transition: background-color 0.3s, color 0.3s;
@@ -39,7 +39,7 @@
 
 
 .active-thread {
-  background-color: #007bff;
+  background-color: #5757d4;
   color: white;
 }
 
