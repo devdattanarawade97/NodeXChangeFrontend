@@ -10,7 +10,7 @@ import Helmet from "react-helmet";
 const arweave = Arweave.init({});
 
 
-export default function ChatInterface({ onSendMessage, threadMessages, onNewMessage, currentMessage, onRelevantText }) {
+export default function ChatInterface({ onSendMessage, threadMessages, onNewMessage, currentMessage }) {
 
 
   //current model state variable
@@ -51,12 +51,10 @@ export default function ChatInterface({ onSendMessage, threadMessages, onNewMess
       const relevantTextData = await relevantText.json();
       //log relevant text data 
 
-
-      const completeRelevantText = await relevantTextData.message.join(' ');
+      const completeRelevantText = relevantTextData.message;
       console.log("relevant text data : ", completeRelevantText);
-      //set relevant text
-      onRelevantText(completeRelevantText);
-      onSendMessage(currentMessage, false)
+    
+      onSendMessage(currentMessage, false , completeRelevantText);
 
 
     } catch (error) {

@@ -19,8 +19,6 @@ export default function App() {
   //current thread state variable
   const [currentThread, setCurrentThread] = useState(0);
 
-  //set relevant text state variable
-  const [relevantText, setRelevantText] = useState(null);
   //set thread completion timestamp state variable
   const [threadCompletionTimestamp, setThreadCompletionTimestamp] = useState(null);
   //thread messages state variable
@@ -90,7 +88,7 @@ export default function App() {
    
 
 
-  }, [ messagesSent , currentThread]);
+  }, [ messagesSent , currentThread ]);
   const handleNewThread = async () => {
    
       const threadIdResponse = await fetch("http://localhost:8000/api/process/create-thread", {
@@ -122,7 +120,7 @@ export default function App() {
    
   };
 
-  const handleSendMessage = async (newMessage , isGPTResponse) => {
+  const handleSendMessage = async (newMessage , isGPTResponse , relevantText) => {
       
     try {
       
@@ -204,7 +202,7 @@ export default function App() {
               threadMessages={threadMessages}
               onNewMessage={setCurrentMessage}
               currentMessage={currentMessage}
-              onRelevantText={setRelevantText}
+          
             />
           </div>
         </div>
