@@ -6,13 +6,12 @@
   background-color: white;
 }
 
-
-
 .header-container{
 
  display: flex;
 
 }
+
 .user-message {
   background-color: #e1f7d5; /* Light green for user messages */
   text-align: left;
