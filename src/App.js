@@ -19,7 +19,8 @@ export default function App() {
   //current thread state variable
   const [currentThread, setCurrentThread] = useState(0);
 
-
+  //set relevant text state variable
+  const [relevantText, setRelevantText] = useState(null);
   //set thread completion timestamp state variable
   const [threadCompletionTimestamp, setThreadCompletionTimestamp] = useState(null);
   //thread messages state variable
@@ -32,7 +33,14 @@ export default function App() {
  
   //wallet address state variable 
   const [parentWalletAddress, setParentWalletAddress] = useState(null);
-        // Function to connect Solana wallet
+  
+  //paretar wallet address state variable
+  const [parentArWalletAddress, setParentArWalletAddress] = useState(null);
+
+  
+  // Function to connect Solana wallet
+  
+
 
   //async fetch thread run data
   async function fetchThreadRunData() {
@@ -127,6 +135,7 @@ export default function App() {
           },
           body: JSON.stringify({
             message: newMessage,
+            relevantText: relevantText
           }),
         })
 
@@ -142,7 +151,7 @@ export default function App() {
         setMessagesSent(true);
         //set thread completion timestamp
 
-        setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?5000:Date.now()-data.completedAt);
+        setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?8000:Date.now()-data.completedAt);
       }
 
       if(threadMessages.length===0){
@@ -158,6 +167,7 @@ export default function App() {
             threadId: threads[currentThread],
             isGPTResponse: isGPTResponse,
             message: newMessage,
+            relevantText: relevantText
           }),
         });
         //log add message to thread response
@@ -168,7 +178,7 @@ export default function App() {
         setMessagesSent(true);
         //set thread completion timestamp
 
-        setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?5000:Date.now()-data.completedAt);
+        setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?8000:Date.now()-data.completedAt);
       } catch (error) {
         
         console.log(`error while adding message to thread ${error}`);
@@ -178,7 +188,9 @@ export default function App() {
 
   return (
     <div>
-          <Header parentWalletAddress={setParentWalletAddress} />
+      <Header parentWalletAddress={setParentWalletAddress}
+      parentArWalletAddress={setParentArWalletAddress}
+      />
           <div className="app-container">
             <LeftPanel
               onNewThread={handleNewThread}
@@ -192,7 +204,7 @@ export default function App() {
               threadMessages={threadMessages}
               onNewMessage={setCurrentMessage}
               currentMessage={currentMessage}
-             
+              onRelevantText={setRelevantText}
             />
           </div>
         </div>
