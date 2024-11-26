@@ -16,8 +16,6 @@ export default function ChatInterface({ onSendMessage, threadMessages, onNewMess
   //current model state variable
   const [currentModel, setCurrentModel] = useState("GPT");
 
-  //current tx id state variable
-  const [currentTxId, setCurrentTxId] = useState(null);
 
   const handleModelSwitch = () => {
 
@@ -32,6 +30,10 @@ export default function ChatInterface({ onSendMessage, threadMessages, onNewMess
         method: "GET",
 
       })
+      // const response = await fetch(`https://2aszcqykhy7efzxgspd3wt2qeopaqgusjnfk3gg2byyom6irzcrq.arweave.net/${tx_id}`, {
+      //   method: "GET",
+
+      // })
       const responseData = await response.json();
       //log response id 
       console.log("response id : ", responseData);
@@ -108,8 +110,7 @@ export default function ChatInterface({ onSendMessage, threadMessages, onNewMess
           {currentModel.toUpperCase()}
         </button>
         <FileUploadIcon
-          onFileUpload={handleUploadedFile}
-          onTxId={setCurrentTxId}
+          onFileUpload={handleUploadedFile} 
         ></FileUploadIcon>
         <input
           type="text"

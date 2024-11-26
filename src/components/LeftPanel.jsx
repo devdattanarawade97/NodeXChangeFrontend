@@ -8,11 +8,11 @@ export default function LeftPanel({ onNewThread, onSelectThread, threads, curren
   console.log("first message of thread : ", firstMessages);
 
   return (
-    <div className={`sidebar `}>
+    <div className={`sidebar`}>
       <input
         type="text"
         placeholder="Search Chat..."
-        className={`search-bar `}
+        className={`search-bar`}
       />
       <button className={`new-chat-button `} onClick={onNewThread}>
         New Chat

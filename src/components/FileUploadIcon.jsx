@@ -4,7 +4,7 @@ import { FaPaperclip } from "react-icons/fa"; // Importing from react-icons
 import Arweave from "arweave";
 
 
-export default function FileUploadIcon({ onFileUpload  , onTxId }) {
+export default function FileUploadIcon({ onFileUpload  }) {
   const fileInputRef = useRef(null);
 
   const handleFileChange = async (event) => {
@@ -65,8 +65,7 @@ export default function FileUploadIcon({ onFileUpload  , onTxId }) {
       const res = await window.arweaveWallet.dispatch(transaction);
       //log res
       console.log("transaction res : ", res);
-      //set tx id 
-      onTxId(res.id);
+   
     } catch (error) {
 
       //log error 

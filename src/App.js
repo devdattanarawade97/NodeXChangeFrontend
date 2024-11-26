@@ -150,11 +150,7 @@ export default function App() {
         //set thread completion timestamp
 
         setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?8000:Date.now()-data.completedAt);
-      }
-
-      if(threadMessages.length===0){
-        setFirstMessagesOfThread([...firstMessagesOfThread, newMessage]);
-      }
+      } else {
         const addMessageToThread = await fetch("http://localhost:8000/api/process/run-thread", {
           method: "POST",
           headers: {
@@ -177,6 +173,12 @@ export default function App() {
         //set thread completion timestamp
 
         setThreadCompletionTimestamp(data.threadCompletionTimestamp==null||undefined?8000:Date.now()-data.completedAt);
+      }
+
+      if(threadMessages.length===0){
+        setFirstMessagesOfThread([...firstMessagesOfThread, newMessage]);
+      }
+     
       } catch (error) {
         
         console.log(`error while adding message to thread ${error}`);
@@ -185,7 +187,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className='app'>
       <Header parentWalletAddress={setParentWalletAddress}
       parentArWalletAddress={setParentArWalletAddress}
       />
