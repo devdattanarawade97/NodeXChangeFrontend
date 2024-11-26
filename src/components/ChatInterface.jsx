@@ -48,6 +48,7 @@ export default function ChatInterface({ onSendMessage, threadMessages, onNewMess
         }),
       })
 
+      
       const relevantTextData = await relevantText.json();
       //log relevant text data 
 
