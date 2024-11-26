@@ -8,8 +8,7 @@ export default function Header({ parentWalletAddress  , parentArWalletAddress}) 
   const [walletAddress, setWalletAddress] = useState(null);
   //arconnect wallet address state variable 
   const [arWalletAddress, setArWalletAddress] = useState(null);
-
-  //connect arwallet address
+  
 
   // Connect to Phantom Wallet
   const connectArWallet = async () => {
@@ -115,7 +114,10 @@ export default function Header({ parentWalletAddress  , parentArWalletAddress}) 
 
     
       {/* Right-aligned Wallet Connect */}
+ 
       <div className="connect-wallet-container">
+
+        <button className='connect-marketplace-button'>Marketplace</button>
       <ArWalletConnect
           walletAddress={arWalletAddress}
           shortenWalletAddress={shortenWalletAddress}
