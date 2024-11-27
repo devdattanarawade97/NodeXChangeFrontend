@@ -125,6 +125,7 @@ export default function Header({ parentWalletAddress  , parentArWalletAddress}) 
           onConnectWallet={connectArWallet}
           onDisconnectWallet={disconnectArWallet}
         />
+        
         <WalletConnect
           walletAddress={walletAddress}
           shortenWalletAddress={shortenWalletAddress}
